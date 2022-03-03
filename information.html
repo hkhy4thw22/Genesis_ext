@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Genesis_Information</title>
+        <style type="text/css">
+            body {background-color: #4f535b;}
+            .nodis {display:none;}
+            #m_searchonoffdiv > p{margin: 3px 0 10px 0;}
+            table, td, th{ border: 2px solid #6f6f6f;border-collapse:collapse;}
+            .colorgrade_S {font-size: 200%; color: #e6d222 }
+            .colorgrade_A {font-size: 200%; color: rgb(255, 145, 0) }
+            .colorgrade_B {font-size: 200%; color: rgb(146, 125, 21) }
+            .colorgrade_C {font-size: 200%; color: rgb(119, 101, 12) }
+            .colorgrade_D {font-size: 200%; color: black }
+            .colorgrade_Ho {font-size: 200%; color: rgb(137, 184, 247) }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p>
+                <input type = "button" value ="⇦" id = "move_back"  style="width:40px; margin-right: 8px;">
+                <input type = "button" value ="実験" id = "test_button"  style="width:40px; margin-right: 16px;">
+                <input type = "button" value ="リセット" id = "reset"  style="width:80px; margin-right: 16px;">
+                <input type = "button" value ="メニュー" id = "gohome"  style="width:80px;">
+            </p>
+        </div>
+        <div id="mainnotokoro">
+
+            <div id="menu" class="">
+                <h1>メニュー</h1>
+                
+                <P><input type="button" value="データベースを保存" id="m_DBsave"></P>
+                <P><input type="button" value="データベースを消去" id="m_DBdelete" disabled><input type="checkbox" id="m_DBdelete_hoken"></P>
+    
+                <p id="m_searchonoffp" style="user-select: none;">検索欄▼</p>
+                <div id="m_searchonoffdiv" class="nodis" style="border:2px dashed #000000 ;padding:5px 0 0 5px">
+                    <label for="m_s_url">URL</label>
+                    <p><input type="search" size = "20" id="m_s_url" name="url" value="11915839/4928"> <input type="button" value="search"></p>
+                    <label for="m_true_artist">TRUE ARTIST</label>
+                    <p><input type="search" size = "20" id="m_true_artist" name="true_artist"> <input type="button" value="search"></p>
+                    <label for="m_true_group">TRUE GROUP</label>
+                    <p><input type="search" size = "20" id="m_true_group" name="true_group"> <input type="button" value="search"></p>
+                    <label for="m_file_relation">ファイル</label>
+                    <p><input type="search" size = "20" id="m_file_relation" name="file_relation"> <input type="button" value="search"></p>
+                    <label for="m_artist">ARTIST</label>
+                    <p><input type="search" size = "20" id="m_artist" name="artist"> <input type="button" value="search"></p>
+                    <label for="m_group">GROUP</label>
+                    <p><input type="search" size = "20" id="m_group" name="group"> <input type="button" value="search"></p>
+                </div>
+                <p id="m_createdatanoffp" style="user-select: none;">データ作成▼</p>
+                <div id="m_createdatanoffdiv" class="" style="border:2px dashed #000000 ;padding:5px 0 0 5px">
+                    <p>
+                        <select id="m_createdatanoffselect"> 
+                            <option value="" selected> --  データタイプ選択  -- </option>
+                            <option value="file_relation" >ファイル関係性</option>
+                            <option value="true_artist" >True Artist</option>
+                            <option value="true_group" >True Group</option>
+                            <option value="artist" >Artist</option>
+                            <option value="group" >Group</option>
+                            <option value="url" >URL</option>
+                        </select>
+                        <input type="button" id="m_createdatanoffbtn" value="作成">
+                    </p>
+                </div>
+                <p id="m_historyonoffp" style="user-select: none;">今日の履歴▼</p>
+                <div id="m_historyonoffdiv" class="nodis" style="border:2px dashed #000000 ;padding:5px 0 0 5px">
+                    <h2>ここにりれき</h2>
+                </div>
+            </div>
+    
+    
+    
+            <div id="url" class="nodis">
+                <div>
+                    <h1>--URL--</h1>
+                    <p id ="u_name"></p>
+                       => <input type ="text" id="u_name_j">
+                    <p style = "font-size: 24px;" id="u_status"> </p>
+                    <input type ="range" min = 1 max = 6 id ="u_statusRange">
+                    <p>URL</br><input type="text" size = "21" id = "u_url" disabled></p>
+                    <p>アーティスト</p>
+                    <table id = "u_artist">
+                    </table>
+                    <p>グループ</p>
+                    <table id = "u_group">
+                    </table>
+                    <div>
+                        <div style="width:75px ;display:inline-block; vertical-align: top;">
+                            <label style="display:block">
+                                <input type ="checkbox" name="unfinished" id="u_comment_tag_unfinished">未完成
+                            </label>
+                            <label style="display:block">
+                                <input type ="checkbox" name="anotherone" id="u_comment_tag_anotherone">別あり
+                            </label>
+                            <label style="display:block">
+                                <input type ="checkbox" name="homo" id="u_comment_tag_homo">ホモ
+                            </label>
+                        </div>
+                        <textarea cols="25" rows="6" style="display: inline-block;" id="u_comment"></textarea>
+                    </div>
+                    <p id ="u_time">投稿日時</p>
+                </div>
+            </div>
+    
+    
+    
+    
+            <div id="true_artist" class="nodis">
+                <h1>--TRUE アーティスト--</h1>
+                <p id="ta_name"></p>
+                <p>評価&nbsp;&nbsp;:&nbsp;&nbsp;<span id="ta_grade"></span></p>
+                <div>
+                    <p>≪ 関係するファイル ≫</p>
+                    <div id = "ta_file"></div>
+                </div>
+                <textarea cols="25" rows="6" id="ta_comment"></textarea>
+                <table id = "ta_kobetu"></table>
+            </div>
+        
+            <div id="true_group" class="nodis">
+                <h1>--TRUE グループ--</h1>
+                <p id="tg_name"></p>
+                <p>評価&nbsp;:&nbsp;<span id="tg_grade"></span></p>
+                <div>
+                    <p>≪ 関係するファイル ≫</p>
+                    <div id = "tg_file"></div>
+                </div>
+                <textarea cols="25" rows="6" id="tg_comment"></textarea>
+                <table id = "tg_kobetu"></table>
+            </div>
+    
+            <div id="file_relation" class="nodis">
+                <h1>--ファイル関係性--</h1>
+                <p id="f_name"></p>
+                <p id="f_place"></p>
+                <textarea cols="25" rows="6" id="f_comment"></textarea>
+                <table id="f_kankei_ag">
+                </table>
+                <table id="f_kankei_url">
+                </table>
+            </div>
+    
+            <div id="artist" class="nodis">
+                <h1>--アーティスト--</h1>
+                <p id="a_name"></p>
+                <p>   ⇒<input type="text" id="a_true_name"><span id="a_true_name_grade"></span></p>
+                <p>最終検索日時</p>
+                <p id="a_last_search"></p>
+                <p id="a_last_index"></p>
+                <textarea cols="25" rows="6" id="a_comment"></textarea>
+                <table id = "a_urlnotoko">
+                </table>
+            </div>
+    
+            <div id="group" class="nodis">
+                <h1>--グループ--</h1>
+                <p id="g_name"></p>
+                <p>   ⇒<input type="text" id="g_true_name">―――<span id="g_true_name_grade"></span></p>
+                <p>最終検索日時</p>
+                <p id="g_last_search"></p>
+                <p id="g_last_index"></p>
+                <textarea cols="25" rows="6" id="g_comment"></textarea>
+                <table id = "g_urlnotoko">
+                </table>
+            </div>
+    
+            <div id="create_data" class="nodis">
+                <h1>くりえいとでーた</h1>
+            </div>
+        </div>
+
+
+        <script src="./information.js"></script>
+        
+    </body>
+</html>

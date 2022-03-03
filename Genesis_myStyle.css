@@ -1,0 +1,70 @@
+/*  右枠左枠のcss
+    右枠はoverflow:autoでスクロール、左はiframeを入れてるから勝手にスクロールついてる   */
+#hidariWakuWaku {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    border-right: 2px solid rgb(90, 206, 226);
+}
+#migiWaku{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    overflow:auto;
+    background-color:red;
+}
+#hidariWaku{
+	border: none;
+	height: 100%;
+	width: 100%;
+    background-color:greenyellow;
+}
+/*  gl3eの所日付とか評価とかのところを整理するcss   */
+.gl3e{
+    min-height:300px !important;
+    border-right: 1px solid #6f6f6f4d !important;
+}
+.gl3e>div:nth-child(2){
+    top:51px !important;
+}
+.gl3e>div:nth-child(3){
+    top:0px !important;
+    display: none !important;
+}
+.gl3e>div:nth-child(4){
+    top:0px !important;
+    display: none !important;
+}
+.gl3e>div:nth-child(5){
+    top:76px !important;
+    font-size:9pt !important;
+}
+.gl3e>div:nth-child(6){
+    top:0px !important;
+    display: none !important;
+}
+.gl3e>div:nth-child(7){
+    top:100px !important;
+    height: 190px;
+    background-color: indigo;
+} 
+.gl4e{
+    border-left: none !important;
+}
+
+
+
+
+
+
+.kan{
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: center;   
+    background-image: url(chrome-extension://__MSG_@@extension_id__/images/kan.png) !important;
+}
+.checkhighlighted{
+    background-color: #574332a1;
+}
