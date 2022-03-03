@@ -61,4 +61,4 @@ app.get("/datas/*", function(request, response) {
 
 
 app.use(serveStatic(path.normalize(path.resolve(".")), { index: ["index.html", "index.htm"] }));
-app.listen(3000,function(){console.log("サーパーを開きました ポート番号:"+port);});
+app.listen(port, "localhsot",function(){console.log("サーパーを開きました ポート番号:"+port);});
