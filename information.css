@@ -1,0 +1,167 @@
+
+/* 変数入れるところ */
+:root{
+    --hidari_aki : 24px;
+    --ue_aki : 48px;
+    --main_color : #4f535b;
+    --info_main_color : #c3d1d1;
+}
+
+
+/* 全テーブル */
+table, td, th{
+    border: 2px solid #6f6f6f;
+    text-align: center;
+    border-collapse:collapse;
+}
+
+
+/* mainのDIV 全h1 見出し */
+#mainnotokoro h1 {
+    display: inline-block;
+    padding-left: 10px;
+    transform: skewX(-18deg);
+    border-left: solid 20px var(--info_main_color);
+    border-bottom: solid 5px var(--info_main_color);
+    margin-left: 18px;
+}
+
+
+/* ボタンやステータスバーだけのこしてスクロールするやつ +α */
+/* 少しだけ(2px)下に配置して、ボタンの下線にかぶらないようにする */
+#mainnotokoro {
+    position: absolute;
+    top: -webkit-calc(var(--ue_aki) + 2px);
+    left: var(--hidari_aki);
+    width: -webkit-calc(97% - var(--hidari_aki)) ;
+    height: -webkit-calc(100% - var(--ue_aki) - 2px) ;
+    padding-left: 12px;
+    overflow:auto;
+}
+#top_buttontati{
+    position: absolute;
+    top: 0px;
+    left: var(--hidari_aki);
+    width: -webkit-calc(97% - var(--hidari_aki)) ;
+    height: var(--ue_aki);
+    border-bottom:1px solid #000000 ;
+}
+#top_buttontati > div{
+    margin: 8px;
+}
+#hidari_statusbar{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: var(--hidari_aki);
+    height: 100%;
+    background-color: var(--info_main_color);
+}
+
+
+/* 一番上のボタンたち */
+#top_buttontati input{
+    width: 80px;
+    height: 32px;
+    margin-right: 16px;
+}
+#move_back , #create_save{
+    width: 60px !important;
+}
+
+
+
+/* StatusBar の ところ */
+#hidari_statusbar > div{
+    width: var(--hidari_aki);
+    margin: 16px 0;
+    transform: skewY(-35deg);
+    height: -webkit-calc( (99% - 120px) / 4 ) ;
+    writing-mode: vertical-rl;
+    text-align: center;
+    color: black;
+    background-color: greenyellow;
+}
+#hidari_statusbar > div > p{
+    margin: 0;
+    transform: skewY(35deg);
+    user-select: none;
+}
+#hidari_statusbar > div:nth-child(1){
+    margin-top: 32px;
+}
+#hidari_statusbar > .status_error_mode{
+    background-color: rgb(255, 106, 47);
+}
+/* 時間経過で色変えるやつ １時間で完全色変化 25 -> 45 -> 60  元の色greenyellow(R:173 G:255 B:47)*/
+#hidari_statusbar > .status_not_ready{
+    background-color: rgb(120, 122, 89);
+}
+#hidari_statusbar > .status_t1_mode{
+    background-color: rgb(190, 216, 47);
+}
+#hidari_statusbar > .status_t2_mode{
+    background-color: rgb(212, 181, 47);
+}
+#hidari_statusbar > .status_t3_mode{
+    background-color: rgb(255, 106, 47);
+}
+
+
+/* 遷移機能あるやつにマウスオーバーしたら色変わる */
+.tranmotionIn:hover{
+    background-color: #626f88;
+}
+
+
+/* Menu */
+/* 検索欄 */
+#m_searchonoffdiv > p{
+    margin: 3px 0 10px 0;
+}
+/* ボタンたち */
+#m_menuButtons input{
+    margin: 0 10px 0 10px;
+    width: 120px;
+}
+
+
+/* URL defference 違ってる部分を表すやつ */
+#u_difference_area{
+    padding-left : 10px;
+}
+#u_difference_area > div > span{
+    border:2px dashed #000000 ;
+    display: inline-block;
+    width: 100px;
+    margin: 0 20px 10px 0;
+    text-align: center;
+    color: black;
+    background-color: rgb(119, 119, 84);
+}
+#u_difference_area > div > .deffLightOn{
+    background-color: rgb(255, 255, 92);
+}
+
+
+/* artist,group */
+/* true_name */
+#a_true_name , #g_true_name{
+    font-size: 32px;
+    margin: 0 12px;
+}
+/* grade */
+#a_true_name_grade , #g_true_name_grade{
+    margin: 0 0 0 12px;
+}
+
+
+/* true_artist,true_group */
+/* grade */
+#ta_grade , #tg_grade{
+    margin: 0 12px;
+}
+/* relation_file */
+#ta_file p , #tg_file p {
+    font-size: 24px;
+}
